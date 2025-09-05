@@ -2,8 +2,20 @@ import 'package:app/screen/home_screen.dart';
 import 'package:app/screen/more_screen.dart';
 import 'package:app/widget/bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // 비동기 초기화 전에 필요
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: "AIzaSyABQz_ioUSRL-TcW6zQjobX6ZPNjfp7Ys4",
+      appId: "1:138335808725:ios:241411cf158a62ed03465c",
+      messagingSenderId: "138335808725",
+      projectId: "neflix-clone-70a88",
+      storageBucket: "neflix-clone-70a88.appspot.com",
+    ),
+  );
   //!앱시작해주세요 runapp안에 메인페이지 넣으면 됨
   runApp(MyApp());
 }
